@@ -19,8 +19,9 @@ public class MD {
         if (n == -1) end = true;
         else md.update(b, 0, n);
       }
-      BigInteger bi = new BigInteger(1, md.digest());
-      System.out.println(bi.toString(16));
+      b = md.digest();
+      BigInteger bi = new BigInteger(1, b);
+      System.out.printf("%0" + b.length * 2 + "X\n", bi);
     } catch (Exception e) {
       e.printStackTrace(System.out);
     }
